@@ -1,0 +1,19 @@
+INSERT INTO `&pre_settings` VALUES('theme', 'default');
+&start
+INSERT INTO `&pre_settings` VALUES('per_page', '10');
+&start
+INSERT INTO `&pre_settings` VALUES('user_profiles', '1');
+&start
+INSERT INTO `&pre_settings` VALUES('title', '&title');
+&start
+INSERT INTO `&pre_settings` VALUES('user_reg', '1');
+&start
+INSERT INTO `&pre_settings` VALUES('menu_sep', '&mdash;');
+&start
+INSERT INTO `&pre_settings` VALUES('users_per_col', '10');
+&start
+INSERT INTO `&pre_settings` VALUES('url_to', '&def_url');
+&start
+INSERT INTO `&pre_settings` VALUES('cache_time', '60');
+&start
+INSERT INTO `&pre_settings` VALUES('use_cache', 'none');

@@ -1,0 +1,235 @@
+body {
+	background:#f1f1f1;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+	color:#000;
+}
+
+h1 {
+	font-size:20px;
+	font-weight:700;
+	text-transform:uppercase;
+	margin-bottom:20px;
+}
+
+hr {
+	color:#aaa;
+	background:#aaa;
+	height:1px;
+	border:none;
+}
+
+/* div ids that go with the default theme */
+#container {
+	width:850px;
+	background:#fff;
+	border:1px solid #e1e1e1;
+	margin:0 auto;
+	padding:20px;
+}
+
+#content {
+	padding:10px;
+}
+
+#header {
+	height:198px;
+	background:url(images/header.jpg);
+	border-bottom:2px solid #000;
+	border-top:2px solid #000;
+}
+
+#main_menu {
+	height:30px;
+	background:#000;
+	margin:0;
+	padding:5px;
+}
+
+#title_line {
+	height:40px;
+	font-size:30px;
+	text-align:center;
+	margin:5px auto;
+}
+
+/* end default theme divs */
+
+/* tag cloud classes */
+.smallest {
+	font-size:5px;
+}
+
+.small {
+	font-size:10px;
+}
+
+.medium {
+	font-size:15px;
+}
+
+.big {
+	font-size:20px;
+}
+
+.bigger {
+	font-size:25px;
+}
+
+.biggest {
+	font-size:30px;
+}
+/* end tag cloud classes */
+
+/* general classes */
+.bold {
+	font-weight:700;
+}
+
+.break {
+	display:block;
+}
+
+.clear {
+	clear:both;
+}
+
+.italic {
+	font-style:italic;
+}
+
+.center {
+	text-align:center;
+	padding:20px;
+}
+/* end general classes */
+
+/* main menu */
+.menu {
+	list-style:none;
+	margin:0;
+}
+
+.menu li {
+	display:inline;
+	margin:5px;
+}
+
+.menu li a {
+	font-size:16px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.menu li a:hover {
+	color:#b1b1b1;
+}
+
+.menu li a:visited {
+	color:#fff;
+}
+/* end main menu */
+
+/* pagination */
+.pagination {
+	text-align:center;
+}
+
+.pagination a {
+	border:1px solid #bfbfbf;
+	width:20px;
+	text-decoration:none;
+	color:#0B77BD;
+	font-size:12px;
+	padding:3px;
+}
+
+.pagination a:hover,.pagination a.current {
+	border:1px solid #000;
+	color:#000;
+}
+/* end pagination */
+
+/* classes for stories, tags and chapters */
+.chapter {
+	width:90%;
+	margin-left:20px;
+	padding:10px;
+}
+
+.story {
+	width:90%;
+	margin-left:20px;
+	padding-bottom:25px;
+	border-bottom:1px solid #aaa;
+	margin-bottom:25px;
+}
+
+.story_description {
+	margin:10px;
+}
+
+.story_info {
+	color:#777;
+	font-size:13px;
+	font-family:Tahoma, Geneva, sans-serif;
+	margin:0;
+}
+
+.story_info a {
+	font-size:13px;
+	color:#777;
+}
+
+.story_title {
+	font-size:18px;
+	font-weight:700;
+	margin:0 0 -5px -5px;
+}
+
+.story_title a {
+	color:#000;
+	text-decoration:none;
+}
+
+.tags a {
+	color:#555;
+}
+
+.tags a:hover,.story_title a:hover,.story_info a:hover,.userlist a:hover {
+	color:#900;
+}
+
+.userlist {
+	float:left;
+	list-style:none;
+}
+
+.userlist a {
+	color:#000;
+}
+/* end stories, tags and chapters classes */
+
+/* classes for the registration form */
+form ul {
+	list-style:none;
+	width:700px;
+	margin-top:20px;
+	padding-left:20px;
+}
+
+form ul li {
+	padding:10px 0;
+}
+
+form ul li label {
+	display:block;
+	float:left;
+	width:150px;
+	padding:5px 20px 0 0;
+}
+
+form ul li span {
+	font-size:12px;
+	margin:20px;
+}

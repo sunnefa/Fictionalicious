@@ -1,0 +1,292 @@
+Fictionalicious - a story publishing platform
+#Changelog
+Started v. 0.9 on 23.03.2011
+	Changes between v. 0.8 and 0.9
+		Code changes
+			-fixed an issue where the installer didn't say what was wrong. Now it does and suggests steps to take before trying again
+			
+			-added better locking out of non-admin users from admin functions such as settings and tags
+			
+			-added userfeedback to the add chapter where "Chapter was added successfully" appears after it's been added
+			
+			-fixed an issue with the avatar in the install file
+			
+			-fixed the issue with the double slashes in the urls
+			
+			-created the final default theme
+			
+			-made a few minor changes to the html markup of the browser
+			
+			-fixed the problem with the empty tag in the add story page
+			
+			-made a few small changes to the pagination function, removed the old pagination functions
+			
+			-fixed the chapter view, profiles and tag view to accomodate the new db functions and deleted the unnecessary data pages
+			
+			-changed the tag selection on add and update stories, now there is a list of tags with checkboxes next to them but it's also possible to add new tags
+			
+			-fixed the story browser to accomodate the new functions to interface with the database, fixed a-z, views, date, tag cloud and users
+			
+			-added forgotten password and username functions as well as a lockout mechanism if the user writes their password wrong three times in a row.
+			
+
+Started v. 0.8 on 13.03.2011
+	Changes between v. 0.7 and 0.8
+		MySQL changes
+			-changed the names of some of the settings columns to match the constant names used throughout the script
+			
+			-added 'avatar' to users table
+		
+		Code changes
+			-added activation and password email sending function to the user manager
+			
+			-added password reset and regeneration through the user manager
+			
+			-added delete users functionality to the admin users page
+			
+			-made changes to the print_tag_cloud function so the class is determined on how big a percentage the tag story count is of the total story count
+			
+			-fixed a glitch in the update tags function where the tag id was empty
+			
+			-updated the jquery color plugin so now it works with Safari and Chrome
+			
+			-fixed issue with add story where it required user functions
+			
+			-added comments to functions/theme.php, functions/print.php and functions/basics.php
+			
+			-functions/get.php deprecated
+			
+			-functions/update.php deprecated
+			
+			-created session messages for the settings page
+			
+			-created data/settings.php to hold the CRUD for the settings table
+			
+			-updated the settings.php file use the settings data file and create a constant for each setting in a few lines
+			
+			-updated the settings admin page to have the logic in the controller
+			
+			-updated the tag manager to have the logic in the controller
+			
+			-updated the static admin controller to have the logic
+			
+			-updated the admin stories and admin chapters pages to have the logic in the controller
+			
+			-updated  the delete chapter to have the logic in the controller
+			
+			-updated the update chapter to have the logic in the controller and moved all the sql to the data pages
+			
+			-updated the add chapter to have the logic in the controller and moved all the sql to the data pages
+			
+			-updated the delete story to have the logic in the controller and moved all the sql to data pages
+			
+			-created one data file to interface for each table
+			
+			-moved all the admin files from the admin folder to application/controllers/admin, application/data/admin and application/pages/admin
+			
+			-updated the add story and update story pages to have the logic in the controller and moved all the sql to data pages
+			
+			-added validation to the profile page and all feedback is now in the session for that page
+			
+			-switched from simple theme to advanced theme on all textareas to reduce the overall number of files
+			
+			-made a static controller for the a-z, most viewed, latest stories and tag cloud
+			
+			-made a static controller for the admin dashboard, logout and traffic pages
+			
+			-all admin page requests are now funneled through the main index.php
+			
+			-moved the admin/index.php to root/admin.php
+			
+			-added a users page to the admin panel
+			
+			-made small changes to the get_tag_list() function to accomodate the admin panel
+			
+			-added tag manager to admin panel
+			
+			-added a check to see if the link has been removed and throw an error if it has
+			
+			-added Powered by Fictionalicious link to the bottom of the page
+			
+			-created .INSTALLED which is used to determine if the script in installed or not. If the file exists in the root folder the installation file will not run and if it doesn't the front end redirects to the install file.
+			
+			-created theme function url_parser to explode the requested url into an array we can use
+			
+			-created 'scripts/settings.js' to toggle the settings help boxes
+			
+			-made small changes to the TinyMCE configuration to reduce the overall number of files
+			
+			-created 'config/functions/update.php' and 'config/functions/upload.php' holding updating and uploading functions respectively
+			
+			-added 'Settings' to admin panel where the admin can change the settings
+			
+			-added 'Traffic' to admin panel where users can view the traffic to their stories, broken down by chapters
+			
+			-added 'Profile' to admin panel where users can change their password, email address, biography and avatar
+			
+			-created filelist and added functions to check if all files are present in the installation file
+			
+			-depending on the USER_PROFILES setting an avatar also appears in story view
+			
+			-added user avatars to profile pages
+
+Started v. 0.7 on 07.03.2011
+	Changes between v. 0.5 and 0.7
+		Code changes
+			-added creation of an uploads folder for users when they register
+			
+			-added creation of an uploads folder for the admin user in the install file
+			
+			-added checks to see if the required folder (config and uploads) are writable
+			
+			-styled the installation file with some css and valid html
+			
+			-fixed an issue with the views not incrementing when default was NULL in chapters table by setting the default to 0
+			
+			-added inserts for one default story, one default chapter and one default tag in the install file
+			
+			-added  support for images as menu separators
+			
+			-updated installation file to write the .htaccess file
+			
+			-fixed a typo in the add story where new tag relationships weren't inserted correctly into the database
+			
+			-added the PREFIX constant which is the table prefix for the database
+		
+			-made an installation file 
+			
+			-added add chapters
+			
+			-added update chapters via ajax and provided fallback for non-javascript
+			
+			-added delete chapters via ajax and provided fallback for non-javascript
+			
+			-added admin panel chapter list
+			
+			-changed to a global config folder and files, setting different error handlers dependent on ADMIN_MODE constant
+			
+			-removed the functions from the admin directory, they are all the same anyway, why not have one global config and function folder?
+			
+			-changed from edit_story to stories in admin panel
+			
+			-minor css changed in the admin panel
+			
+			-separated the data logic in the pages/users.php and the pages/tags.php
+			
+			-made sure all data is processed before it's printed out (applies to story pages and storylists, namely functions that add links etc)
+			
+			-moved the sql queries from data/tags.php
+			
+			-removed deprecated functions from the functions/get.php
+			
+			-moved the sql query from data/storylist.php, data/profile.php and data/tag.php
+			
+			-added the storylist mysql query to the get functions as get_stories
+			
+			-separated the datalogic in the /applications/pages/profile.php page
+			
+			-added print_tags function to print out the tags
+			
+			-get function get_tags deprecated, getting them via joins now
+			
+			-separated the data logic in the /applications/pages/storylist.php page
+			
+			-changed the storylist mysql query to include the tags
+
+
+Started v. 0.5 on 25.02.2011
+	Changes between v. 0.3 and 0.5
+		Misc
+			-added setting 'cache_time'. Allows the admin to choose the timeout of the cache
+			
+			-added setting 'cache'. Allows the admin to choose whether to use caching or not. Can be set to none, stories or all
+		
+		Code changes
+			-added update story page through edit story list for no script
+			
+			-added update story through the edit story list via ajax
+			
+			-added delete story page through edit story list for no script
+			
+			-added delete story through edit story list via ajax
+			
+			-added edit story list
+			
+			-added custom menu depending on user level
+			
+			-added login functions
+			
+			-created admin panel
+			
+			-added caching of everything
+		
+			-added caching of stories
+			
+			-added (num) to user list where num is the number of stories the user has written
+			
+			-added 'WHERE status != 'inactive' to the userlist to prevent inactive users from being listed
+			
+			-moved the replacement of the tokens to a function
+			
+			-added mysql_real_escape_string to all possible user input
+			
+			-removed the $_GET superglobal, using $queries instead. Makes for cleaner .htaccess file and makes it easier to monitor that the number of query strings are what they are supposed to be
+			
+			-removed AJAX from some form fields on the registration page, is now only on username and email
+
+
+
+Started v. 0.3 on 17.02.2011
+	Changes between v. 0.1 and 0.3
+		MySQL changes
+			-removed column 'num_stories' from fic_users
+		
+		Misc
+			-added setting 'default_url'. This is set when the script is installed and can be changed by admins if neccessary
+		
+			-added setting 'users_per_col'. If you have a large number of users, this setting should be set to a high value
+		
+		Code changes
+			-fixed the URL_TO constant, it was just returning a '/' now it returns the 'default_url' setting from the database
+		
+			-added activation page
+			
+			-added registration email sending and a thank you page
+		
+			-added registration form with Ajax validation and server side validation
+			
+			-added user profiles with lists of the users stories and some fallback text if there are none
+			
+			-added a user list page - a list of users with links to their profiles
+			
+			-used the custom error function for exceptions
+			
+			-added a custom error page for theme errors (that is if the theme was not found)
+			
+			-fixed modrewrite rules, the admin folder is now accessible
+			
+			-added a custom error handling function
+			
+			-added tag list to chapter view
+			
+			-error "undefined index 'sort' in application/pages/storylist.php on line 15 - fixed by using the $page variable set in
+			index.php instead of $_GET['sort']
+			
+			-error "unknown column 'fic_chapters.word_count' in application/data/story on line 55" - fixed by removing
+			'fic_chapters.word_count' from the MySQL query
+
+
+Started v. 0.1 on 11.02.2011
+    Changes between v. 0.0 and 0.1
+		
+		Misc
+		-added setting 'menu_separator'. Allows admin users to choose which symbol to use to separate the main navigation items
+		
+		MySQL changes:
+			-removed column 'tags' from fic_stories - using junction table instead
+            
+			-removed column 'word_count' from fic_chapters - using MySQl to calculate the length instead
+            
+			-removed column 'num_stories' from fic_tags - using junction table instead
+            
+Started v. 0.0 on 01.02.2011

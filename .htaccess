@@ -1,0 +1,25 @@
+Options -Indexes
+#Start Fictionalicious rules
+	#Start ModRewrite
+		<IfModule mod_rewrite.c>
+		RewriteEngine On
+		RewriteBase /Fic9/
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteRule (.*)/$ index.php [L]
+
+		RewriteCond %{REQUEST_FILENAME} !-f
+		RewriteCond %{REQUEST_URI} !(.*)/$
+		RewriteRule ^(.*)$ $1/ [L,R=301]
+
+
+		</IfModule>
+	#End ModRewrite
+	
+	#Start ErrorDocuments
+		ErrorDocument 403 /Fic9/error/
+		ErrorDocument 404 /Fic9/error/
+		ErrorDocument 500 /Fic9/error/
+	#End ErrorDocuments
+	
+#End Fictionalicious rules

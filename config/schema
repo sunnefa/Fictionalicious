@@ -1,0 +1,60 @@
+CREATE TABLE IF NOT EXISTS `&pre_chapters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `chapter_contents` longtext NOT NULL,
+  `storyid` int(11) NOT NULL,
+  `views` int(11) NOT NULL DEFAULT '0',
+  `timestamp` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='All the chapters added to stories by the users.';
+&start
+CREATE TABLE IF NOT EXISTS `&pre_settings` (
+  `name` varchar(45) NOT NULL,
+  `value` varchar(45) NOT NULL,
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='Holds settings which can be changed by the admin users.';
+&start
+CREATE TABLE IF NOT EXISTS `&pre_stories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `description` mediumtext NOT NULL,
+  `authorid` int(11) NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'no-chapters',
+  `timestamp` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This table holds the stories added by users.';
+&start
+CREATE TABLE IF NOT EXISTS `&pre_tagged` (
+  `taggedid` int(11) NOT NULL AUTO_INCREMENT,
+  `tagid` int(11) DEFAULT NULL,
+  `storyid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`taggedid`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This table holds the relationships between tags and stories.';
+&start
+CREATE TABLE IF NOT EXISTS `&pre_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tag_name` varchar(50) NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This table holds the tags used to categorize the stories.';
+&start
+CREATE TABLE IF NOT EXISTS `&pre_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'inactive',
+  `level` varchar(20) NOT NULL DEFAULT 'user',
+  `bio` varchar(500) DEFAULT NULL,
+  `avatar` varchar(255) NOT NULL DEFAULT 'images/profile.jpg',
+  `timestamp` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='This table holds all the user information.';
+&start
+INSERT INTO `&pre_stories` (`id`, `title`, `description`, `authorid`, `status`, `timestamp`) VALUES(1, 'Hello world!', '<p>Hello! This is your first story. Edit or delete it, then start creating your own. Have fun!</p>', 1, 'in-progress', 1300041248);
+&start
+INSERT INTO `&pre_chapters` (`id`, `title`, `chapter_contents`, `storyid`, `views`, `timestamp`) VALUES(1, 'Chapter 1', '&lt;p&gt;This is the first chapter. You can edit or delete it, then start making your own.&lt;/p&gt;\n&lt;p&gt;Please note that you cannot add chapters without having at least one story, all chapters must belong to stories.&lt;/p&gt;\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\n&lt;p&gt;You can use formatting in your chapter such as &amp;lt;em&amp;gt;&lt;em&gt;Em(italics)&lt;/em&gt;&amp;lt;/em&amp;gt;, &amp;lt;strong&amp;gt;&lt;strong&gt;Strong(bold)&lt;/strong&gt;&amp;lt;/strong&amp;gt; and &amp;lt;span style=&quot;text-decoration: underline;&quot;&amp;gt;&lt;span style=&quot;text-decoration: underline;&quot;&gt;Underline&lt;/span&gt;&amp;lt;/span&amp;gt;.&lt;/p&gt;\n&lt;p&gt;You can also use the &amp;lt;br /&amp;gt; tag but please note that &amp;lt;p&amp;gt; and &amp;lt;/p&amp;gt; are automatically added around each new line.&lt;/p&gt;\n&lt;p&gt;You can use the &amp;lt;hr /&amp;gt; tag or the more semantic &amp;lt;div class=&quot;separator&quot;&amp;gt;&amp;lt;/div&amp;gt;(note that the div does not show the separation line in the text editor) that you can style with your theme''s CSS.&lt;/p&gt;', 1, 0, 1300041584);
+&start
+INSERT INTO `&pre_tags` (`id`, `tag_name`, `description`) VALUES(1, 'a tag', 'This is the first tag. Edit or delete it, then start adding your own.');
+&start
+INSERT INTO `&pre_tagged` (`taggedid`, `tagid`, `storyid`) VALUES(1, 1, 1);
