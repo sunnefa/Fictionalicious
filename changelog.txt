@@ -1,5 +1,14 @@
 Fictionalicious - a story publishing platform
 #Changelog
+TODO:
+Make the script object oriented
+Add extension/plugin support
+Create a better theme engine
+Allow comments/reviews on chapters
+Add a collaborate feature for stories
+Make a nicer default theme
+Make a proper website that is not just a demo
+
 Started v. 0.9 on 23.03.2011
 	Changes between v. 0.8 and 0.9
 		Code changes
